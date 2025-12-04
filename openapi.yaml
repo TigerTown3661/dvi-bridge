@@ -2,6 +2,7 @@ openapi: 3.1.0
 info:
   title: DVI Bridge API
   version: 1.0.0
+  description: API for ISO, PMA, QC inspections and media uploads to ROWriter.
 
 servers:
   - url: https://web-production-1cf0d.up.railway.app
@@ -10,133 +11,159 @@ paths:
 
   /dvi/start:
     post:
-      summary: Start an inspection
+      summary: Start a DVI inspection
+      description: Begins the inspection process for a given repair order.
       operationId: startInspection
-      description: Start the DVI inspection workflow.
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - ro_number
               properties:
                 ro_number:
                   type: string
+                  description: Repair order number
       responses:
         "200":
-          description: Inspection started.
+          description: Inspection started
 
   /dvi/get_rowid:
     get:
-      summary: Get ROWriter RowID
+      summary: Get the ROWriter RowID
+      description: Returns the RowID needed for ISO/PMA/QC uploads.
       operationId: getRowId
-      description: Returns the RowID needed for ISO or PMA uploads.
       parameters:
         - in: query
           name: ro_number
           required: true
           schema:
             type: string
+            description: Repair order number
       responses:
         "200":
-          description: RowID result.
+          description: RowID result
 
   /dvi/iso_inspection:
     post:
-      summary: Submit ISO inspection results
+      summary: Submit ISO inspection payload
+      description: Sends the entire ISO inspection workflow payload to ROWriter.
       operationId: submitIsoInspection
-      description: Sends the full ISO inspection payload to ROWriter.
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              description: Full ISO inspection JSON payload
+              additionalProperties: true
       responses:
         "200":
-          description: ISO inspection submitted.
+          description: ISO inspection submitted
 
   /dvi/upload_image:
     post:
       summary: Upload image to an inspection item
+      description: Uploads an image to a specific checklist item in ISO or PMA.
       operationId: uploadInspectionImage
-      description: Uploads an image to a checklist item in ISO/PMA.
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - ro_number
+                - labor_id
+                - item_id
+                - images
               properties:
                 ro_number:
                   type: string
+                  description: Repair order number
                 labor_id:
                   type: string
+                  description: Labor operation ID
                 item_id:
                   type: string
+                  description: Checklist item ID
                 images:
                   type: array
+                  description: List of images to upload
                   items:
                     type: object
+                    required:
+                      - file_url
                     properties:
                       file_url:
                         type: string
+                        description: Temporary URL to download the image
                       file_name:
                         type: string
+                        description: Optional filename for upload
       responses:
         "200":
-          description: Upload successful.
+          description: Image uploaded successfully
 
   /dvi/iso_complete:
     post:
       summary: Complete ISO inspection
-      operationId: completeIsoInspection
       description: Marks the ISO inspection as completed in ROWriter.
+      operationId: completeIsoInspection
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - ro_number
               properties:
                 ro_number:
                   type: string
+                  description: Repair order number
       responses:
         "200":
-          description: ISO inspection completed.
+          description: ISO inspection completed
 
   /dvi/pma_complete:
     post:
       summary: Complete PMA inspection
-      operationId: completePmaInspection
       description: Marks the PMA inspection as completed in ROWriter.
+      operationId: completePmaInspection
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - ro_number
               properties:
                 ro_number:
                   type: string
       responses:
         "200":
-          description: PMA inspection completed.
+          description: PMA inspection completed
 
   /dvi/qc_complete:
     post:
       summary: Complete QC inspection
-      operationId: completeQcInspection
       description: Marks the QC inspection as completed in ROWriter.
+      operationId: completeQcInspection
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - ro_number
               properties:
                 ro_number:
                   type: string
       responses:
         "200":
-          description: QC inspection completed.
+          description: QC inspection completed
