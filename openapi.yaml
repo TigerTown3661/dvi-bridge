@@ -20,12 +20,12 @@ paths:
           application/json:
             schema:
               type: object
-              required:
-                - ro_number
               properties:
                 ro_number:
                   type: string
                   description: Repair order number
+              required:
+                - ro_number
       responses:
         "200":
           description: Inspection started
@@ -58,7 +58,7 @@ paths:
             schema:
               type: object
               description: Full ISO inspection JSON payload
-              properties: {}         # <-- REQUIRED FOR OPENAI
+              properties: {}  
               additionalProperties: true
       responses:
         "200":
@@ -75,35 +75,27 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                ro_number:
+                  type: string
+                labor_id:
+                  type: string
+                item_id:
+                  type: string
+                images:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_url:
+                        type: string
+                      file_name:
+                        type: string
               required:
                 - ro_number
                 - labor_id
                 - item_id
                 - images
-              properties:
-                ro_number:
-                  type: string
-                  description: Repair order number
-                labor_id:
-                  type: string
-                  description: Labor operation ID
-                item_id:
-                  type: string
-                  description: Checklist item ID
-                images:
-                  type: array
-                  description: List of images to upload
-                  items:
-                    type: object
-                    required:
-                      - file_url
-                    properties:
-                      file_url:
-                        type: string
-                        description: Temporary URL to download the image
-                      file_name:
-                        type: string
-                        description: Optional filename for upload
       responses:
         "200":
           description: Image uploaded successfully
@@ -119,11 +111,11 @@ paths:
           application/json:
             schema:
               type: object
-              required:
-                - ro_number
               properties:
                 ro_number:
                   type: string
+              required:
+                - ro_number
       responses:
         "200":
           description: ISO inspection completed
@@ -139,5 +131,31 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                ro_number:
+                  type: string
               required:
                 - ro_number
+      responses:
+        "200":
+          description: PMA inspection completed
+
+  /dvi/qc_complete:
+    post:
+      summary: Complete QC inspection
+      description: Marks the QC inspection as completed in ROWriter.
+      operationId: completeQcInspection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ro_number:
+                  type: string
+              required:
+                - ro_number
+      responses:
+        "200":
+          description: QC inspection completed
