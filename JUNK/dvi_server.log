@@ -1,0 +1,140 @@
+2025-12-01 06:53:38,391 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 06:53:38,451 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.0.1.95:5003
+2025-12-01 06:53:38,451 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-01 06:53:38,454 [INFO]  * Restarting with stat
+2025-12-01 06:53:39,307 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 06:53:39,343 [WARNING]  * Debugger is active!
+2025-12-01 06:53:39,347 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 06:56:47,486 [INFO] 127.0.0.1 - - [01/Dec/2025 06:56:47] "GET /health HTTP/1.1" 200 -
+2025-12-01 06:56:47,528 [INFO] 127.0.0.1 - - [01/Dec/2025 06:56:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-01 06:57:23,578 [INFO] 127.0.0.1 - - [01/Dec/2025 06:57:23] "[31m[1mPOST /dvi/start HTTP/1.1[0m" 400 -
+2025-12-01 06:58:32,709 [INFO] 127.0.0.1 - - [01/Dec/2025 06:58:32] "[31m[1mPOST /dvi/start HTTP/1.1[0m" 400 -
+2025-12-01 06:58:55,102 [INFO] 127.0.0.1 - - [01/Dec/2025 06:58:55] "[31m[1mPOST /dvi/start HTTP/1.1[0m" 400 -
+2025-12-01 06:59:46,589 [INFO] 127.0.0.1 - - [01/Dec/2025 06:59:46] "[31m[1mPOST /dvi/start HTTP/1.1[0m" 400 -
+2025-12-01 06:59:56,794 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 06:59:57,312 [INFO] DVI login OK
+2025-12-01 06:59:57,313 [INFO] Changing status for RO 0007610 \u2192 3
+2025-12-01 06:59:57,497 [INFO] 127.0.0.1 - - [01/Dec/2025 06:59:57] "POST /dvi/start HTTP/1.1" 200 -
+2025-12-01 07:01:00,338 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 07:01:00,763 [INFO] DVI login OK
+2025-12-01 07:01:00,763 [INFO] Changing status for RO 0007610 \u2192 4
+2025-12-01 07:01:00,951 [INFO] 127.0.0.1 - - [01/Dec/2025 07:01:00] "POST /dvi/iso_complete HTTP/1.1" 200 -
+2025-12-01 07:01:13,680 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 07:01:14,136 [INFO] DVI login OK
+2025-12-01 07:01:14,137 [INFO] Changing status for RO 0007610 \u2192 5
+2025-12-01 07:01:14,277 [INFO] 127.0.0.1 - - [01/Dec/2025 07:01:14] "POST /dvi/pma_complete HTTP/1.1" 200 -
+2025-12-01 07:06:41,876 [INFO] 127.0.0.1 - - [01/Dec/2025 07:06:41] "[31m[1mPOST /dvi/iso_inspection HTTP/1.1[0m" 400 -
+2025-12-01 07:07:56,719 [INFO] 127.0.0.1 - - [01/Dec/2025 07:07:56] "[31m[1mPOST /dvi/iso_inspection HTTP/1.1[0m" 400 -
+2025-12-01 07:42:44,356 [INFO]  * Detected change in 'c:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 07:42:44,457 [INFO]  * Restarting with stat
+2025-12-01 07:42:45,358 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 07:42:45,395 [WARNING]  * Debugger is active!
+2025-12-01 07:42:45,398 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 08:00:59,744 [INFO]  * Detected change in 'c:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 08:00:59,801 [INFO]  * Restarting with stat
+2025-12-01 08:01:00,688 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 08:01:00,723 [WARNING]  * Debugger is active!
+2025-12-01 08:01:00,726 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 08:01:28,860 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 08:01:28,911 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.0.1.95:5003
+2025-12-01 08:01:28,911 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-01 08:01:28,914 [INFO]  * Restarting with stat
+2025-12-01 08:01:29,729 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 08:01:29,766 [WARNING]  * Debugger is active!
+2025-12-01 08:01:29,768 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 08:01:41,743 [INFO] 127.0.0.1 - - [01/Dec/2025 08:01:41] "[31m[1mPOST /dvi/iso_inspection HTTP/1.1[0m" 400 -
+2025-12-01 08:03:39,750 [INFO] /dvi/iso_inspection ro=0007610, title=ISO, images=1
+2025-12-01 08:03:39,751 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 08:03:40,221 [INFO] DVI login OK
+2025-12-01 08:03:40,222 [INFO] Uploading image to ROW SaveMedia: tmp_e27bba4d08164b99948942cd23dad49c.jpg \u2192 a480a95f97e84c709eca79c1f5943d3c.jpg
+2025-12-01 08:03:40,910 [INFO] SaveMedia OK \u2192 blob=6b6eba4190f046cf9bb403a5f9b72204.jpg
+2025-12-01 08:03:40,911 [INFO] Attaching blob=6b6eba4190f046cf9bb403a5f9b72204.jpg to RO=0007610
+2025-12-01 08:03:41,140 [INFO] Saving checklist for RO=0007610, title=ISO
+2025-12-01 08:03:41,317 [INFO] Changing status for RO=0007610 \u2192 3
+2025-12-01 08:03:41,495 [INFO] Changing status for RO=0007610 \u2192 4
+2025-12-01 08:03:41,705 [INFO] 127.0.0.1 - - [01/Dec/2025 08:03:41] "POST /dvi/iso_inspection HTTP/1.1" 200 -
+2025-12-01 09:23:32,383 [INFO] 127.0.0.1 - - [01/Dec/2025 09:23:32] "[33mGET / HTTP/1.1[0m" 404 -
+2025-12-01 09:23:44,467 [INFO] 127.0.0.1 - - [01/Dec/2025 09:23:44] "GET /health HTTP/1.1" 200 -
+2025-12-01 10:00:32,186 [INFO] 127.0.0.1 - - [01/Dec/2025 10:00:32] "GET /health HTTP/1.1" 200 -
+2025-12-01 10:00:32,276 [INFO] 127.0.0.1 - - [01/Dec/2025 10:00:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-01 10:10:54,582 [INFO] 127.0.0.1 - - [01/Dec/2025 10:10:54] "GET /openapi.yaml HTTP/1.1" 200 -
+2025-12-01 10:11:58,354 [INFO] 127.0.0.1 - - [01/Dec/2025 10:11:58] "GET /openapi.yaml HTTP/1.1" 200 -
+2025-12-01 10:12:54,438 [INFO] 127.0.0.1 - - [01/Dec/2025 10:12:54] "GET /openapi.yaml HTTP/1.1" 200 -
+2025-12-01 10:19:11,563 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 10:19:11,643 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.0.1.95:5003
+2025-12-01 10:19:11,643 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-01 10:19:11,646 [INFO]  * Restarting with stat
+2025-12-01 10:19:12,466 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 10:19:12,498 [WARNING]  * Debugger is active!
+2025-12-01 10:19:12,502 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 10:21:40,289 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 10:21:40,340 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.0.1.95:5003
+2025-12-01 10:21:40,340 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-01 10:21:40,342 [INFO]  * Restarting with stat
+2025-12-01 10:21:41,129 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 10:21:41,161 [WARNING]  * Debugger is active!
+2025-12-01 10:21:41,163 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 10:46:09,376 [INFO] 127.0.0.1 - - [01/Dec/2025 10:46:09] "GET /openapi.yaml HTTP/1.1" 200 -
+2025-12-01 10:47:49,784 [INFO] 127.0.0.1 - - [01/Dec/2025 10:47:49] "GET /health HTTP/1.1" 200 -
+2025-12-01 10:48:01,685 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 10:48:02,136 [INFO] DVI login OK
+2025-12-01 10:48:02,137 [INFO] Changing status for RO=0000001 \u2192 3
+2025-12-01 10:48:02,289 [INFO] 127.0.0.1 - - [01/Dec/2025 10:48:02] "POST /dvi/start HTTP/1.1" 200 -
+2025-12-01 10:48:18,344 [INFO] 127.0.0.1 - - [01/Dec/2025 10:48:18] "[33mPOST /dvi/iso_complete HTTP/1.1[0m" 404 -
+2025-12-01 11:49:42,934 [INFO] 127.0.0.1 - - [01/Dec/2025 11:49:42] "GET /health HTTP/1.1" 200 -
+2025-12-01 12:02:27,122 [INFO] 127.0.0.1 - - [01/Dec/2025 12:02:27] "GET /health HTTP/1.1" 200 -
+2025-12-01 12:03:03,903 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 12:03:04,538 [INFO] DVI login OK
+2025-12-01 12:03:04,539 [INFO] Changing status for RO=0007610 \u2192 3
+2025-12-01 12:03:04,738 [INFO] 127.0.0.1 - - [01/Dec/2025 12:03:04] "POST /dvi/start HTTP/1.1" 200 -
+2025-12-01 12:03:31,308 [INFO] 127.0.0.1 - - [01/Dec/2025 12:03:31] "[33mPOST /dvi/iso_complete HTTP/1.1[0m" 404 -
+2025-12-01 12:04:23,717 [INFO] 127.0.0.1 - - [01/Dec/2025 12:04:23] "[33mPOST /dvi/pma_complete HTTP/1.1[0m" 404 -
+2025-12-01 12:08:00,375 [INFO] 127.0.0.1 - - [01/Dec/2025 12:08:00] "[33mGET /dvi/iso_complete HTTP/1.1[0m" 404 -
+2025-12-01 13:35:47,082 [INFO]  * Detected change in 'C:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 13:35:47,181 [INFO]  * Restarting with stat
+2025-12-01 13:35:48,409 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 13:35:48,449 [WARNING]  * Debugger is active!
+2025-12-01 13:35:48,453 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 13:36:10,664 [INFO]  * Detected change in 'C:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 13:36:10,716 [INFO]  * Restarting with stat
+2025-12-01 13:36:11,677 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 13:36:11,720 [WARNING]  * Debugger is active!
+2025-12-01 13:36:11,724 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 13:36:42,951 [INFO] /dvi/iso_complete ro=0007610
+2025-12-01 13:36:42,951 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 13:36:43,432 [INFO] DVI login OK
+2025-12-01 13:36:43,433 [INFO] Changing status for RO=0007610 \u2192 4
+2025-12-01 13:36:43,568 [INFO] 127.0.0.1 - - [01/Dec/2025 13:36:43] "POST /dvi/iso_complete HTTP/1.1" 200 -
+2025-12-01 13:40:34,500 [INFO] 127.0.0.1 - - [01/Dec/2025 13:40:34] "[33mPOST /dvi/pma_complete HTTP/1.1[0m" 404 -
+2025-12-01 13:51:39,150 [INFO]  * Detected change in 'C:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 13:51:39,207 [INFO]  * Restarting with stat
+2025-12-01 13:51:40,157 [INFO] Starting DVI server on 0.0.0.0:5003
+2025-12-01 13:51:40,198 [WARNING]  * Debugger is active!
+2025-12-01 13:51:40,201 [INFO]  * Debugger PIN: 182-952-978
+2025-12-01 13:51:58,029 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 13:51:58,658 [INFO] DVI login OK
+2025-12-01 13:51:58,659 [INFO] Changing status for RO=0007610 \u2192 5
+2025-12-01 13:51:58,819 [INFO] 127.0.0.1 - - [01/Dec/2025 13:51:58] "POST /dvi/pma_complete HTTP/1.1" 200 -
+2025-12-01 13:52:35,008 [INFO] /dvi/iso_inspection ro=0007610, title=ISO, images=2
+2025-12-01 13:52:35,009 [INFO] Logging into DVI as hometownmidas+21@gmail.com
+2025-12-01 13:52:36,000 [INFO] DVI login OK
+2025-12-01 13:52:36,000 [INFO] Failed to upload photo_1: Image not found: photo_1
+2025-12-01 13:52:36,001 [INFO] Failed to upload photo_2: Image not found: photo_2
+2025-12-01 13:52:36,001 [INFO] Saving checklist for RO=0007610, title=ISO
+2025-12-01 13:52:36,197 [INFO] Changing status for RO=0007610 \u2192 3
+2025-12-01 13:52:36,350 [INFO] Changing status for RO=0007610 \u2192 4
+2025-12-01 13:52:36,515 [INFO] 127.0.0.1 - - [01/Dec/2025 13:52:36] "POST /dvi/iso_inspection HTTP/1.1" 200 -
+2025-12-01 14:22:55,354 [INFO]  * Detected change in 'C:\\DVI_SERVER\\dvi_server.py', reloading
+2025-12-01 14:22:55,418 [INFO]  * Restarting with stat

@@ -1,0 +1,192 @@
+openapi: 3.1.0
+info:
+  title: DVI API Bridge
+  version: 1.0.0
+
+servers:
+  - url: https://dvi.tigertown.net
+
+paths:
+
+  /dvi/start:
+    post:
+      operationId: startInspection
+      summary: Move inspection to "Start" status.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number]
+              properties:
+                ro_number:
+                  type: string
+      responses:
+        '200':
+          description: Status updated successfully.
+
+  /dvi/iso_complete:
+    post:
+      operationId: completeIso
+      summary: Move ISO inspection to "Complete" status.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number]
+              properties:
+                ro_number:
+                  type: string
+      responses:
+        '200':
+          description: ISO inspection completed.
+
+  /dvi/pma_complete:
+    post:
+      operationId: completePma
+      summary: Complete PMA process for a repair order.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number]
+              properties:
+                ro_number:
+                  type: string
+      responses:
+        '200':
+          description: PMA process completed.
+
+  /dvi/qc_complete:
+    post:
+      operationId: completeQc
+      summary: Complete QC inspection for a repair order.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number]
+              properties:
+                ro_number:
+                  type: string
+      responses:
+        '200':
+          description: QC completed.
+
+  /dvi/get_rowid:
+    get:
+      operationId: getRowId
+      summary: >
+        Retrieves the active RowID for a repair order by calling the official
+        DVI `GetChecklist` endpoint and matching the RONumber. 
+        This method is the same one used by the ROWriter Touch app and is
+        the only reliable way to map RONumber → ROWID.
+      parameters:
+        - in: query
+          name: ro_number
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: RowID retrieved successfully.
+
+
+  /dvi/upload_image:
+    post:
+      operationId: uploadTempImage
+      summary: Upload an image temporarily to the server (/tmp) for later ISO attachment.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: File uploaded temporarily.
+
+  /dvi/iso_inspection:
+    post:
+      operationId: isoInspection
+      summary: Perform ISO inspection with comments and optional images.
+      description: >
+        Saves ISO comments via the official R.O.Writer WebForm, attaches image blobs,
+        and optionally moves the inspection status to "Start" then "Complete".
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number, rowid]
+              properties:
+                ro_number:
+                  type: string
+                comments:
+                  type: string
+                image_paths:
+                  type: array
+                  items:
+                    type: string
+                rowid:
+                  type: string
+                move_to_start:
+                  type: boolean
+                move_to_complete:
+                  type: boolean
+      responses:
+        '200':
+          description: ISO inspection processed successfully.
+
+  /dvi/pma_technician_notes:
+    post:
+      operationId: pmaTechNotes
+      summary: Submit technician PMA notes for a repair order.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number, labor_id, notes]
+              properties:
+                ro_number:
+                  type: string
+                labor_id:
+                  type: string
+                notes:
+                  type: string
+      responses:
+        '200':
+          description: PMA notes saved successfully.
+
+  /dvi/prime_iso:
+    post:
+      operationId: primeIso
+      summary: Prime the ISO comment field in the DVI checklist.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ro_number]
+              properties:
+                ro_number:
+                  type: string
+      responses:
+        '200':
+          description: ISO primed and ready.
