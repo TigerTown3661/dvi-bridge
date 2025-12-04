@@ -11,6 +11,7 @@ paths:
   /dvi/start:
     post:
       summary: Start an inspection
+      operationId: startInspection
       description: Start the DVI inspection workflow.
       requestBody:
         required: true
@@ -28,6 +29,7 @@ paths:
   /dvi/get_rowid:
     get:
       summary: Get ROWriter RowID
+      operationId: getRowId
       description: Returns the RowID needed for ISO or PMA uploads.
       parameters:
         - in: query
@@ -42,6 +44,7 @@ paths:
   /dvi/iso_inspection:
     post:
       summary: Submit ISO inspection results
+      operationId: submitIsoInspection
       description: Sends the full ISO inspection payload to ROWriter.
       requestBody:
         required: true
@@ -55,7 +58,8 @@ paths:
 
   /dvi/upload_image:
     post:
-      summary: Upload image to a specific inspection item
+      summary: Upload image to an inspection item
+      operationId: uploadInspectionImage
       description: Uploads an image to a checklist item in ISO/PMA.
       requestBody:
         required: true
@@ -86,6 +90,7 @@ paths:
   /dvi/iso_complete:
     post:
       summary: Complete ISO inspection
+      operationId: completeIsoInspection
       description: Marks the ISO inspection as completed in ROWriter.
       requestBody:
         required: true
@@ -103,6 +108,7 @@ paths:
   /dvi/pma_complete:
     post:
       summary: Complete PMA inspection
+      operationId: completePmaInspection
       description: Marks the PMA inspection as completed in ROWriter.
       requestBody:
         required: true
@@ -120,6 +126,7 @@ paths:
   /dvi/qc_complete:
     post:
       summary: Complete QC inspection
+      operationId: completeQcInspection
       description: Marks the QC inspection as completed in ROWriter.
       requestBody:
         required: true
