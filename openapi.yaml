@@ -58,6 +58,7 @@ paths:
             schema:
               type: object
               description: Full ISO inspection JSON payload
+              properties: {}         # <-- REQUIRED FOR OPENAI
               additionalProperties: true
       responses:
         "200":
@@ -123,7 +124,6 @@ paths:
               properties:
                 ro_number:
                   type: string
-                  description: Repair order number
       responses:
         "200":
           description: ISO inspection completed
@@ -141,29 +141,3 @@ paths:
               type: object
               required:
                 - ro_number
-              properties:
-                ro_number:
-                  type: string
-      responses:
-        "200":
-          description: PMA inspection completed
-
-  /dvi/qc_complete:
-    post:
-      summary: Complete QC inspection
-      description: Marks the QC inspection as completed in ROWriter.
-      operationId: completeQcInspection
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - ro_number
-              properties:
-                ro_number:
-                  type: string
-      responses:
-        "200":
-          description: QC inspection completed
