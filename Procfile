@@ -1,1 +1,2 @@
-web: gunicorn dvi_bridge:app
+web: python dvi_server_final.py
+
