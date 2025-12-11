@@ -11,7 +11,7 @@
     "sleepApplication": false,
     "useLegacyStacker": false,
     "multiRegionConfig": {
-      "us-east4-qqdc4a": {
+      "us-east4": {
         "numReplicas": 1
       }
     }
