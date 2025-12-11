@@ -145,6 +145,25 @@ def dvi_start():
         return jsonify({"ok": False, "error": str(e)}), 500
 
 
+@app.post("/dvi/checklist")
+def checklist():
+    data = request.json or {}
+
+    # Example checklist response
+    checklist_payload = {
+        "ok": True,
+        "checklist": [
+            {"item": "Walk around vehicle", "completed": False},
+            {"item": "Take exterior photos", "completed": False},
+            {"item": "Record mileage", "completed": False},
+        ],
+        "raw": "Checklist started",
+        "ro_number": data.get("ro_number", "unknown")
+    }
+
+    return jsonify(checklist_payload), 200
+
+
 # ---------------------------------------------------------
 # ISO INSPECTION
 #
