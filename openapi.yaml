@@ -1,17 +1,24 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: DVI Bridge API
   version: 1.0.0
-  description: API for ISO, PMA, QC inspections and media uploads to ROWriter.
 
 servers:
-  - url: https://web-production-1cf0d.up.railway.app
+  - url: https://dvi.tigertown.net
 
 paths:
 
+  /health:
+    get:
+      summary: Health check
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Server is running
+
   /dvi/start:
     post:
-      summary: Start a DVI inspection
+      summary: Move inspection to "Start" status
       operationId: startInspection
       requestBody:
         required: true
@@ -19,137 +26,124 @@ paths:
           application/json:
             schema:
               type: object
+              required: [ro_number]
               properties:
                 ro_number:
                   type: string
-              required:
-                - ro_number
       responses:
-        "200":
-          description: Inspection started
+        '200':
+          description: Inspection moved to start
 
-  /dvi/get_rowid:
-    get:
-      summary: Get the ROWriter RowID
-      operationId: getRowId
-      parameters:
-        - in: query
-          name: ro_number
-          required: true
-          schema:
-            type: string
+  /dvi/checklist:
+    post:
+      summary: Retrieve static test checklist
+      operationId: getChecklist
+      requestBody:
+        required: false
       responses:
-        "200":
-          description: RowID result
+        '200':
+          description: Checklist loaded
 
   /dvi/iso_inspection:
     post:
-      summary: Submit ISO inspection payload
-      operationId: submitIsoInspection
+      summary: Perform ISO inspection with optional images, comments, and status changes
+      operationId: isoInspection
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required: [ro_number]
               properties:
                 ro_number:
                   type: string
-              required:
-                - ro_number
-              additionalProperties: true
+                title:
+                  type: string
+                comments:
+                  type: string
+                condition:
+                  type: string
+                image_paths:
+                  type: array
+                  items:
+                    type: string
+                move_to_start:
+                  type: boolean
+                move_to_complete:
+                  type: boolean
       responses:
-        "200":
-          description: ISO inspection submitted
+        '200':
+          description: ISO inspection processed
 
   /dvi/upload_image:
     post:
-      summary: Upload image to an inspection item
-      operationId: uploadInspectionImage
+      summary: Upload a temporary image file to the server
+      operationId: uploadTempImage
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
-                ro_number:
+                file:
                   type: string
-                labor_id:
-                  type: string
-                item_id:
-                  type: string
-                images:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_url:
-                        type: string
-                      file_name:
-                        type: string
-              required:
-                - ro_number
-                - labor_id
-                - item_id
-                - images
+                  format: binary
       responses:
-        "200":
-          description: Image uploaded successfully
+        '200':
+          description: Image uploaded
 
   /dvi/iso_complete:
     post:
-      summary: Complete ISO inspection
-      operationId: completeIsoInspection
+      summary: Mark ISO inspection complete
+      operationId: completeIso
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required: [ro_number]
               properties:
                 ro_number:
                   type: string
-              required:
-                - ro_number
       responses:
-        "200":
-          description: ISO inspection completed
+        '200':
+          description: ISO complete
 
   /dvi/pma_complete:
     post:
-      summary: Complete PMA inspection
-      operationId: completePmaInspection
+      summary: Mark PMA process complete
+      operationId: completePma
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required: [ro_number]
               properties:
                 ro_number:
                   type: string
-              required:
-                - ro_number
       responses:
-        "200":
-          description: PMA inspection completed
+        '200':
+          description: PMA complete
 
   /dvi/qc_complete:
     post:
-      summary: Complete QC inspection
-      operationId: completeQcInspection
+      summary: Mark QC inspection complete
+      operationId: completeQc
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required: [ro_number]
               properties:
                 ro_number:
                   type: string
-              required:
-                - ro_number
       responses:
-        "200":
-          description: QC inspection completed
+        '200':
+          description: QC complete
